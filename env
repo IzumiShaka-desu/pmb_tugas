@@ -50,7 +50,11 @@
 # database.tests.password = root
 # database.tests.DBDriver = MySQLi
 # database.tests.DBPrefix =
-
+database.default.hostname = localhost
+database.default.database = Penjualan_MotorBekas
+database.default.username = root
+database.default.password = 
+database.default.DBDriver = MySQLi
 #--------------------------------------------------------------------
 # CONTENT SECURITY POLICY
 #--------------------------------------------------------------------
