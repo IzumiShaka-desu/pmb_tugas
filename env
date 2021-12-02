@@ -38,7 +38,7 @@
 #--------------------------------------------------------------------
 
 database.default.hostname = localhost
-database.default.database = Penjualan_MotorBekas
+database.default.database = Penjualan_Motor_Bekas
 database.default.username = root
 database.default.password = 
 database.default.DBDriver = MySQLi
