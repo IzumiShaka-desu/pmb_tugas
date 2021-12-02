@@ -37,12 +37,12 @@
 # DATABASE
 #--------------------------------------------------------------------
 
-# database.default.hostname = localhost
-# database.default.database = ci4
-# database.default.username = root
-# database.default.password = root
-# database.default.DBDriver = MySQLi
-# database.default.DBPrefix =
+database.default.hostname = localhost
+database.default.database = Penjualan_MotorBekas
+database.default.username = root
+database.default.password = 
+database.default.DBDriver = MySQLi
+database.default.DBPrefix =
 
 # database.tests.hostname = localhost
 # database.tests.database = ci4
@@ -50,11 +50,11 @@
 # database.tests.password = root
 # database.tests.DBDriver = MySQLi
 # database.tests.DBPrefix =
-database.default.hostname = localhost
-database.default.database = Penjualan_MotorBekas
-database.default.username = root
-database.default.password = 
-database.default.DBDriver = MySQLi
+# database.default.hostname = localhost
+# database.default.database = Penjualan_MotorBekas
+# database.default.username = root
+# database.default.password = 
+# database.default.DBDriver = MySQLi
 #--------------------------------------------------------------------
 # CONTENT SECURITY POLICY
 #--------------------------------------------------------------------
