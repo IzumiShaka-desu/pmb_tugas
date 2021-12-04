@@ -2,11 +2,11 @@
 
 use CodeIgniter\Model;
 
-class userModels extends Model
+class UserModels extends Model
 {
-    public function getUserForm($id)
+    public function getUserList()
     {
-        return $this->db->table('user')->getWhere(["IDUser" => $id])->getResultArray();
+        return $this->db->table('user')->getWhere([])->getResultArray();
     }
     public function addUser($user)
     {
@@ -19,11 +19,9 @@ class userModels extends Model
         }
         return $this->db->table('user')->update($user, ["IDUser" => $id]);
     }
-    public function deleteUser($id, $Nama, $Password, $hakAkses, $manager, $Date)
+    public function deleteUser($id)
     {
-        return $this->db->query('DELETE FROM `user` WHERE IDUser=? AND Nama = ? AND Password = ? AND Hak_Akses=? AND Manager=?
-        AND Create_Date=?',
-        [$id, $Password, $hakAkses, $manager, $Date]);
+        return $this->db->query('DELETE FROM `user` WHERE IDUser=?',[$id]);
     }
 
 }
