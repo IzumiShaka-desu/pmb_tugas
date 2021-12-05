@@ -39,7 +39,7 @@
     <td><?= $item['Manager'] ?></td>
     <td><?= $item['Create_Date'] ?></td>
     <!--Tombol Edit dan hapus barang -->  
-      <td>  <a class="btn btn-sm btn-outline-secondary" href="#">Edit</a> |
+      <td>  <a class="btn btn-sm btn-outline-secondary" href="<?= base_url('/userController/editUser/'.$item['IDUser']) ?>">Edit</a> |
       <a href="<?= base_url('userController/delete/'.$item['IDUser']) ?>"class="btn btn-sm btn-outline-danger">Hapus</a>
     </tr>
     <?php   

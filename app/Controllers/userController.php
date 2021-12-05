@@ -18,6 +18,9 @@ class userController extends BaseController
     public function createUser(){
         return view('tambahUser');
     }
+	public function editUser($id){
+		return view('editData',['user'=>$this->uModel->getUserById($id)]);
+	}
 
     public function create()
     {
@@ -32,9 +35,19 @@ class userController extends BaseController
         $this->uModel->addUser($data);
         return redirect()->to('/userController');
     }
-    public function update()
+    public function edit($id)
     {
-        $data = [
+			$data = [
+				"IDUser" => $id,
+				'Nama' => $this->request->getPost('Nama'),
+				'Password' => $this->request->getPost('Password'),
+				'Hak_Akses' => $this->request->getPost('Hak_Akses'),
+				'Manager' => $this->request->getPost('Manager')
+			];		
+			$this->uModel->updateUser($id, $data);
+				return redirect()->to('/usercontroller');
+	}
+        /**$data = [
             "IDUser" => session()->get('user'),
             "Nama" => $this->request->getPost("Nama"),
             "Password" => $this->request->getPost("Password"),
@@ -44,10 +57,8 @@ class userController extends BaseController
         ];
         $this->uModel->updateUser($data);
         return redirect()->to('/userController');
-    }
-
-
-    public function delete($id){
+		**/
+	public function delete($id){
         $this->uModel->deleteUser($id);
         return redirect()->to('/userController');
     }

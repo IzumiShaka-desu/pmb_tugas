@@ -24,6 +24,10 @@ class UserModels extends Model
         return $this->db->query('DELETE FROM `user` WHERE IDUser=?',[$id]);
     }
 
+    public function getUserById($id){
+            return $this->db->table('user')->getWhere(["IDUser"=>$id])->getResultArray();
+        }
+
 }
 
 ?>
