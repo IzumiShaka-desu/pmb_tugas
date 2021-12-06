@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+<?php $level = strtolower(session()->get('user')["level"]); ?>
 
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -79,9 +80,11 @@
 
     <div id="mySidebar" class="sidebar">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
-        <a href="<?= base_url() ?>/User">User</a>
         <a href="<?= base_url() ?>/Transaction">Transaksi</a>
-        <a href="<?= base_url() ?>/IdentitasMotor">Identitas Motor</a>
+        <?php if ($level == "pemilik" || $level == "teller") { ?>
+            <a href="<?= base_url() ?>/User">User</a>
+            <a href="<?= base_url() ?>/IdentitasMotor">Identitas Motor</a>
+        <?php   } ?>
         <a href="/logout">Logout</a>
     </div>
 
@@ -89,5 +92,5 @@
         <nav class="navbar navbar-dark bg-dark">
 
             <button class="openbtn" onclick="openNav()"><span class="navbar-toggler-icon"></span></button>
-            <span class="navbar-brand mb-0 h1">Navbar</span>
+            <span class="navbar-brand mb-0 h1">Hi, <?= session()->get('user')["Username"] ?></span>
         </nav>
