@@ -1,4 +1,6 @@
-<?php namespace App\Models;
+<?php
+
+namespace App\Models;
 
 use CodeIgniter\Model;
 
@@ -21,13 +23,14 @@ class UserModels extends Model
     }
     public function deleteUser($id)
     {
-        return $this->db->query('DELETE FROM `user` WHERE IDUser=?',[$id]);
+        return $this->db->query('DELETE FROM `user` WHERE IDUser=?', [$id]);
     }
-
-    public function getUserById($id){
-            return $this->db->table('user')->getWhere(["IDUser"=>$id])->getResultArray();
-        }
-
+    public function getUserByUnamePassword($uname, $password)
+    {
+        return $this->db->table('user')->getWhere(["Nama" => $uname, "Password" => $password])->getResultArray();
+    }
+    public function getUserById($id)
+    {
+        return $this->db->table('user')->getWhere(["IDUser" => $id])->getResultArray();
+    }
 }
-
-?>
