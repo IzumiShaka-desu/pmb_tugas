@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<?php
-
-$level = strtolower(session()->get('user')["level"]); ?>
+<?php $level = strtolower(session()->get('user')["level"]); ?>
 
 <head>
     <meta charset="UTF-8">
