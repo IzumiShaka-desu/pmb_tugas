@@ -1,5 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
+<?php
+
+$level = strtolower(session()->get('user')["level"]); ?>
 
 <head>
     <meta charset="UTF-8">
@@ -16,8 +19,14 @@
         <div class="container">
             <h1 id="gudangdata" class="display-3"> Tabel User </h1>
             <!--<form action="tambah_data.php" method="POST">-->
-            <table class="table table-bordered table-strip table-hover table-xs-responsive">
-                <a class="btn btn-primary" href="<?= base_url('/user/createUser') ?>">Tambah</a>
+            <table class="table table-hover">
+                <?php
+                if ($level == "pemilik") { ?>
+                    <a class="btn btn-primary" href="<?= base_url('/user/createUser') ?>">Tambah</a>
+                <?php
+                }
+                ?>
+
                 <thead class="thead-dark">
                     <tr class="text-center">
                         <th scope="col">ID User</th>
@@ -25,7 +34,9 @@
                         <th scope="col">Hak Akses</th>
                         <th scope="col">Manager</th>
                         <th scope="col">Tanggal Buat</th>
-                        <th scope="col">Aksi</th>
+                        <?php
+                        if ($level == "pemilik") { ?>
+                            <th scope="col">Aksi</th><?php } ?>
                     </tr>
                 </thead>
                 <tbody class="text-center">
@@ -41,8 +52,11 @@
                                 <td><?= $item['Manager'] ?></td>
                                 <td><?= $item['Create_Date'] ?></td>
                                 <!--Tombol Edit dan hapus barang -->
-                                <td> <a class="btn btn-sm btn-outline-secondary" href="<?= base_url('/user/editUser/' . $item['IDUser']) ?>">Edit</a> |
-                                    <a href="<?= base_url('user/delete/' . $item['IDUser']) ?>" class="btn btn-sm btn-outline-danger">Hapus</a>
+                                <?php
+                                if ($level == "pemilik") { ?>
+                                    <td> <a class="btn btn-sm btn-outline-secondary" href="<?= base_url('/user/editUser/' . $item['IDUser']) ?>">Edit</a> |
+                                        <a href="<?= base_url('user/delete/' . $item['IDUser']) ?>" class="btn btn-sm btn-outline-danger">Hapus</a>
+                                    </td><?php } ?>
                             </tr>
                         <?php
                         } ?>
