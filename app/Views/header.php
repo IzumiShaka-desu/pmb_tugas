@@ -79,9 +79,9 @@
 
     <div id="mySidebar" class="sidebar">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
-        <a href="<? base_url() ?>/User">User</a>
-        <a href="<? base_url() ?>/Transaction">Transaksi</a>
-        <a href="<? base_url() ?>/IdentitasMotor">Identitas Motor</a>
+        <a href="<?= base_url() ?>/User">User</a>
+        <a href="<?= base_url() ?>/Transaction">Transaksi</a>
+        <a href="<?= base_url() ?>/IdentitasMotor">Identitas Motor</a>
         <a href="/logout">Logout</a>
     </div>
 
