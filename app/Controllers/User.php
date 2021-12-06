@@ -16,6 +16,10 @@ class User extends BaseController
         if (session()->get('user') == null) {
             return redirect()->to('/login');
         }
+        $level = strtolower(session()->get('user')["level"]);
+        if (!($level == "pemilik" || $level == "teller")) {
+            return redirect()->to('/Home');
+        }
         $data["user"] = $this->uModel->getUserList();
 
         return view('userView', $data);
@@ -32,7 +36,6 @@ class User extends BaseController
     public function create()
     {
         $data = [
-            "IDUser" => session()->get('user'),
             "Nama" => $this->request->getPost("Nama"),
             "Password" => $this->request->getPost("Password"),
             "Hak_Akses" => $this->request->getPost("Hak_Akses"),
