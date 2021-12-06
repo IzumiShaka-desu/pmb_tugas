@@ -16,6 +16,10 @@ class IdentitasMotor extends BaseController
         if (session()->get('user') == null) {
             return redirect()->to('/login');
         }
+        $level = strtolower(session()->get('user')["level"]);
+        if (!($level == "pemilik" || $level == "teller")) {
+            return redirect()->to('/Home');
+        }
         $data["identitas_motor"] = $this->uModel->getUserList();
 
         return view('identitasmotorView', $data);
