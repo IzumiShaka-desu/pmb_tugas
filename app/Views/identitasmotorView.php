@@ -1,5 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
+<?php
+
+$level = strtolower(session()->get('user')["level"]); ?>
 
 <head>
     <meta charset="UTF-8">
@@ -36,7 +39,13 @@
                     <th scope="col">NO BPKB</th>
                     <th scope="col">Kode Lokasi</th>
                     <th scope="col">Masa Berlaku STNK</th>
-                    <th scope="col">Aksi</th>
+                    <?php
+                    if ($level == "pemilik") { ?>
+
+                        <th scope="col">Aksi</th>
+                    <?php
+                    }
+                    ?>
                 </tr>
             </thead>
             <tbody class="text-center">
@@ -64,9 +73,19 @@
                             <td><?= $item['NoBPKB'] ?></td>
                             <td><?= $item['KodeLokasi'] ?></td>
                             <td><?= $item['MasaBerlakuSTNK'] ?></td>
-                            <td><?= $item['Create_Date'] ?></td>
-                            <td> <a class="btn btn-sm btn-outline-secondary" href="<?= base_url('/IdentitasMotor/editItem/' . $item['ID']) ?>">Edit</a> |
-                                <a href="<?= base_url('/IdentitasMotor/delete/' . $item['ID']) ?>" class="btn btn-sm btn-outline-danger">Hapus</a>
+                            <?php
+                            if ($level == "pemilik") { ?>
+
+
+                                <?php
+
+                                $level = strtolower(session()->get('user')["level"]); ?> <td> <a class="btn btn-sm btn-outline-secondary" href="<?= base_url('/IdentitasMotor/editItem/' . $item['ID']) ?>">Edit</a> |
+                                    <a href="<?= base_url('/IdentitasMotor/delete/' . $item['ID']) ?>" class="btn btn-sm btn-outline-danger">Hapus</a>
+                                </td>
+
+                            <?php
+                            }
+                            ?>
                         </tr>
                     <?php
                     } ?>
