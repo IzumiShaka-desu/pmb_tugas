@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -17,7 +16,7 @@
             margin: 50px auto;
             font-size: 15px;
         }
-        
+
 
         .login-form form {
             margin-bottom: 15px;
@@ -45,11 +44,11 @@
 
 <body>
     <div class="login-form">
-            <div class="alert alert-warning alert-dismissible fade show" role="alert">
-                <h4>Silahkan Login</h4>
-                </hr />
-            </div>
-        <form action="" method="post">
+        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+            <h4>Silahkan Login</h4>
+            </hr />
+        </div>
+        <form action="<?= base_url() ?>/login/action" method="post">
             <h2 class="text-center">Login</h2>
             <div class="form-group">
                 <input type="Nama" name="Username" class="form-control" placeholder="Username" required="required">
