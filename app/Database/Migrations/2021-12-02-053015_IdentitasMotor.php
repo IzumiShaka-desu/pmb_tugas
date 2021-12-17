@@ -19,14 +19,16 @@ class IdentitasMotor extends Migration
             'NoRegistrasi'       => [
                 'type'           => 'VARCHAR',
                 'constraint'     => '60',
-            ], 'NamaPemilik'       => [
+            ],
+            'NamaPemilik'       => [
                 'type'           => 'VARCHAR',
                 'constraint'     => '60',
             ],
             'Alamat'       => [
                 'type'           => 'VARCHAR',
                 'constraint'     => '60',
-            ], 'NoRangka'       => [
+            ],
+            'NoRangka'       => [
                 'type'           => 'VARCHAR',
                 'constraint'     => '60',
             ],
@@ -71,33 +73,25 @@ class IdentitasMotor extends Migration
                 'type'           => 'VARCHAR',
                 'constraint'     => '60',
             ],
-
             'WarnaTNKB' => [
                 'type'           => 'VARCHAR',
                 'constraint'     => '60',
             ],
-
             'TahunRegistrasi' => [
                 'type'           => 'VARCHAR',
                 'constraint'     => '60',
             ],
-
             'NoBPKB' => [
                 'type'           => 'VARCHAR',
                 'constraint'     => '60',
             ],
-
             'KodeLokasi' => [
                 'type'           => 'VARCHAR',
                 'constraint'     => '60',
             ],
-
             'MasaBerlakuSTNK' => [
                 'type' => 'date',
             ],
-
-
-            // 'Create_Date datetime default current_timestamp',
         ]);
         $this->forge->addKey('ID', TRUE);
         $this->forge->createTable('Identitas_Motor');
