@@ -6,6 +6,8 @@ use CodeIgniter\Database\Migration;
 
 class IdentitasMotor extends Migration
 {
+    public $defaultGroup = 'default';
+
     public function up()
     {
 
@@ -95,9 +97,18 @@ class IdentitasMotor extends Migration
             'MasaBerlakuSTNK' => [
                 'type' => 'date',
             ],
-
-
-            'Create_Date datetime default current_timestamp',
+            'Gambar_Motor' => ['type' => 'VARCHAR', 'constraint' => '60',],
+            'Tgl_Beli' => ['type' => 'date'],
+            'Harga_Beli' => [
+                'type'           => 'INT',
+                'constraint'     => 20,
+            ],
+            'Tgl_Jual' => ['type' => 'date',],
+            'Harga_Jual' => [
+                'type'           => 'INT',
+                'constraint'     => 20,
+            ],
+            // 'Create_Date datetime default current_timestamp',
         ]);
         $this->forge->addKey('ID', TRUE);
         $this->forge->createTable('Identitas_Motor');

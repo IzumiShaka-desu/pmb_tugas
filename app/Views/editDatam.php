@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tambah Data Identitas Motor</title>
+    <title>Edit Data Identitas Motor</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <meta name="description" content="The small framework with powerful features">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,113 +16,116 @@
 </head>
 
 <body>
-    <?php include 'navbar.php'; ?>
+    <?php
+    $data = ($item[0]);
+    //  include 'navbar.php'; 
+    ?>
     <div class="container">
         <h3> Silahkan Masukkan Data Identitas Motor</h3>
     </div>
     <table>
         <tr>
-            <form action="<?= base_url(); ?>/IdentitasMotor/create" method="post">
+            <form action="<?= base_url(); ?>/IdentitasMotor/update/<?= $data["ID"] ?>" method="post">
                 <div class="form-group row">
                     <label for="NamaPemilik">Nama Pemilik</label>
                     <div class="col-sm-12">
-                        <input id="NamaPemilik" name="NamaPemilik" type="text" required="required">
+                        <input id="NamaPemilik" name="NamaPemilik" type="text" value="<?= $data["NamaPemilik"] ?>" required=" required">
                     </div>
                 </div>
                 <div class="form-group row">
                     <label for="noreg">Nomor Registrasi</label>
                     <div class="col-sm-12">
-                        <input id="noreg" name="noreg" type="text" required="required">
+                        <input id="noreg" name="noreg" type="text" value="<?= $data["NoRegistrasi"] ?>" required="required">
                     </div>
                 </div>
                 <div class="form-group row">
                     <label for="Alamat">Alamat</label>
                     <div class="col-sm-12">
-                        <input id="Alamat" name="Alamat" type="text" required="required">
+                        <input id="Alamat" name="Alamat" type="text" value="<?= $data["Alamat"] ?>" required="required">
                     </div>
                 </div>
                 <div class="form-group row">
                     <label for="NoRangka">No Rangka</label>
                     <div class="col-sm-12">
-                        <input id="NoRangka" name="NoRangka" type="text" required="required">
+                        <input id="NoRangka" name="NoRangka" type="text" value="<?= $data["NoRangka"] ?>" required="required">
                     </div>
                 </div>
                 <div class="form-group row">
                     <label for="NoMesin">No Mesin</label>
                     <div class="col-sm-12">
-                        <input id="NoMesin" name="NoMesin" type="text" required="required">
+                        <input id="NoMesin" name="NoMesin" type="text" value="<?= $data["NoMesin"] ?>" required="required">
                     </div>
                 </div>
                 <div class="form-group row">
                     <label for="PlatNO">Plat Nomer</label>
                     <div class="col-sm-12">
-                        <input id="PlatNO" name="PlatNO" type="text" required="required">
+                        <input id="PlatNO" name="PlatNO" type="text" value="<?= $data["PlatNO"] ?>" required="required">
                     </div>
                 </div>
                 <div class="form-group row">
                     <label for="Merk">Merk Motor</label>
                     <div class="col-sm-12">
-                        <input id="Merk" name="Merk" type="text" required="required">
+                        <input id="Merk" name="Merk" type="text" value="<?= $data["Merk"] ?>" required="required">
                     </div>
                 </div>
                 <div class="form-group row">
                     <label for="Type">Type Motor</label>
                     <div class="col-sm-12">
-                        <input id="Type" name="Type" type="text" required="required">
+                        <input id="Type" name="Type" type="text" value="<?= $data["Type"] ?>" required="required">
                     </div>
                 </div>
                 <div class="form-group row">
                     <label for="Model">Model Motor</label>
                     <div class="col-sm-12">
-                        <input id="Model" name="Model" type="text" required="required">
+                        <input id="Model" name="Model" type="text" value="<?= $data["Model"] ?>" required="required">
                     </div>
                 </div>
                 <div class="form-group row">
                     <label for="TahunPembuatan">Tahun Pembuatan</label>
                     <div class="col-sm-12">
-                        <input id="TahunPembuatan" name="TahunPembuatan" type="text" required="required">
+                        <input id="TahunPembuatan" name="TahunPembuatan" type="text" value="<?= $data["TahunPembuatan"] ?>" required="required">
                     </div>
                 </div>
                 <div class="form-group row">
                     <label for="IsiSilinder">Isi Silinder</label>
                     <div class="col-sm-12">
-                        <input id="IsiSilinder" name="IsiSilinder" type="text" required="required">
+                        <input id="IsiSilinder" name="IsiSilinder" type="text" value="<?= $data["IsiSilinder"] ?>" required="required">
                     </div>
                 </div>
                 <div class="form-group row">
                     <label for="BahanBakar">Bahan Bakar</label>
                     <div class="col-sm-12">
-                        <input id="BahanBakar" name="BahanBakar" type="text" required="required">
+                        <input id="BahanBakar" name="BahanBakar" type="text" value="<?= $data["BahanBakar"] ?>" required="required">
                     </div>
                 </div>
                 <div class="form-group row">
                     <label for="WarnaTNKB">Warna TNKB</label>
                     <div class="col-sm-12">
-                        <input id="WarnaTNKB" name="WarnaTNKB" type="text" required="required">
+                        <input id="WarnaTNKB" name="WarnaTNKB" type="text" value="<?= $data["WarnaTNKB"] ?>" required="required">
                     </div>
                 </div>
                 <div class="form-group row">
                     <label for="TahunRegistrasi">Tahun Registrasi</label>
                     <div class="col-sm-12">
-                        <input id="TahunRegistrasi" name="TahunRegistrasi" type="text" required="required">
+                        <input id="TahunRegistrasi" name="TahunRegistrasi" type="text" value="<?= $data["TahunRegistrasi"] ?>" required="required">
                     </div>
                 </div>
                 <div class="form-group row">
                     <label for="NoBPKB">NO BPKB</label>
                     <div class="col-sm-12">
-                        <input id="NoBPKB" name="NoBPKB" type="text" required="required">
+                        <input id="NoBPKB" name="NoBPKB" type="text" value="<?= $data["NoBPKB"] ?>" required="required">
                     </div>
                 </div>
                 <div class="form-group row">
                     <label for="KodeLokasi">Kode Lokasi</label>
                     <div class="col-sm-12">
-                        <input id="KodeLokasi" name="KodeLokasi" type="text" required="required">
+                        <input id="KodeLokasi" name="KodeLokasi" type="text" value="<?= $data["KodeLokasi"] ?>" required="required">
                     </div>
                 </div>
                 <div class="form-group row">
                     <label for="MasaBerlakuSTNK">Masa Berlaku STNK</label>
                     <div class="col-sm-12">
-                        <input id="MasaBerlakuSTNK" name="MasaBerlakuSTNK" type="text" required="required">
+                        <input id="MasaBerlakuSTNK" name="MasaBerlakuSTNK" type="text" value="<?= $data["MasaBerlakuSTNK"] ?>" required="required">
                     </div>
                 </div>
                 <div class="form-group row">
