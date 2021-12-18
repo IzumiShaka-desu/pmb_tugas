@@ -13,7 +13,7 @@ namespace Tests\Support\Models;
 
 use CodeIgniter\Model;
 
-class UserModel extends Model
+class IdentitasMotorModel extends Model
 {
     protected $table         = 'user';
     protected $allowedFields = [
