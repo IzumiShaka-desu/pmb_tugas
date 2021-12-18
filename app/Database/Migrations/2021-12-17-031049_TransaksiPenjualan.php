@@ -28,15 +28,17 @@ class TransaksiPenjualan extends Migration
             'Id_cust'           => [
                 'type'           => 'INT',
                 'constraint'     => 11,
+                'unsigned'       => TRUE,
             ],
-            'Id_Kendaraan'           => [
+            'Id_Kendaraan' => [
                 'type'           => 'INT',
                 'constraint'     => 11,
+                'unsigned'       => TRUE,
             ],
         ]);
+        $this->forge->addForeignKey(['Id_cust'], 'Customer', ['Id_Cust']);
+        $this->forge->addForeignKey(['Id_Kendaraan'], 'Identitas_Motor', ['ID']);
         $this->forge->addKey('IdTrsk', TRUE);
-        $this->forge->addForeignKey('Id_cust', 'Customer', 'Id_Cust');
-        $this->forge->addForeignKey('Id_Kendaraan', 'Identitas_Motor', 'ID');
         $this->forge->createTable('Transaksi_Penjualan');
         // , , , , , 
     }
