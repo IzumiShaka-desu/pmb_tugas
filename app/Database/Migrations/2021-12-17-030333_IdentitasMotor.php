@@ -6,8 +6,11 @@ use CodeIgniter\Database\Migration;
 
 class IdentitasMotor extends Migration
 {
+    public $defaultGroup = 'default';
+
     public function up()
     {
+
         $this->forge->addField([
             'ID'           => [
                 'type'           => 'INT',
@@ -94,7 +97,7 @@ class IdentitasMotor extends Migration
             'MasaBerlakuSTNK' => [
                 'type' => 'date',
             ],
-            'Gambar_Motor' => ['type' => 'VARCHAR', 'constraint', '60',],
+            'Gambar_Motor' => ['type' => 'VARCHAR', 'constraint' => '60',],
             'Tgl_Beli' => ['type' => 'date'],
             'Harga_Beli' => [
                 'type'           => 'INT',
