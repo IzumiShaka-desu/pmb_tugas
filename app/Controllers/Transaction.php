@@ -11,7 +11,7 @@ class Transaction extends BaseController
         }
 
         echo view('header');
-
+echo view('transaksiView');
         echo view('footer');
         // return view('welcome_message');
     }
