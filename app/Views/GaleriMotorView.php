@@ -20,12 +20,20 @@
             <div class="card brder-dark">
               <img src="<?php echo $item['Gambar_Motor'] ?>" class="card-img-top" alt="...">
               <div class="card-body">
-                <h5 class="card-title font-weight-bold"><?php echo $item['Merk'].' '.$item['Model'].' '.$item['TahunPembuatan'] ?></h5>
+                <h5 class="card-title font-weight-bold"><?php echo $item['Merk'].' '.$item['Model'].' '.$item['IsiSilinder'] ?></h5>
+                <p class="small text-muted mb-0"><?php echo $item['TahunPembuatan'];?></p>
+                <p></p>
                <label class="card-text harga"><strong>Harga Jual Rp.</strong> <?php echo number_format($item['Harga_Jual']); ?></label><br>
-                <a class="btn btn-success btn-sm btn-block ">BELI</a>
+               <div class="row" style="padding: 0px 100px 0px 100px;">
+                <a type="button" class="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off">Beli Motor</a>
+              </div>
+                <div class="d-flex align-items-center justify-content-between rounded-pill bg-light px-3 py-2 mt-4">
+              <p class="small mb-0"><i class="fa fa-picture-o mr-2"></i><span class="font-weight-bold">Lokasi</span></p>
+              <div class="badge badge-danger px-3 rounded-pill font-weight-normal"><?php echo $item['Alamat'];?></div>
+                </div>
               </div>
             </div>
-    </div>
+          </div>
         <?php
         }
         ?>

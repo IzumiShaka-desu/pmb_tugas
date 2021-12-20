@@ -21,7 +21,7 @@ class Galeri extends BaseController
         /*for($x = 0; $x <= 10; $x++){
             array_push($data["identitas_motor"], $data["identitas_motor"][0] );
 
-        }*/           
+        }*/ 
         
         echo view('GaleriMotorView',$data);
         echo view('footer');
