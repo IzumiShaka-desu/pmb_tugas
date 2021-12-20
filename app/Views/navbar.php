@@ -27,7 +27,7 @@
                     <a class="nav-link" href="#">Identitas Motor <span class="sr-only"></span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Transaksi <span class="sr-only"></span></a>
+                    <a class="nav-link" href="/Transaction">Transaksi <span class="sr-only"></span></a>
                 </li>
             </ul>
         </div>
