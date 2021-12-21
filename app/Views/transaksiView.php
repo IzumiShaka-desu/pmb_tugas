@@ -16,13 +16,13 @@
     <h1 id="gudangdata" class="display-3"> Tabel Transaksi Motor </h1>
     <div class="table-responsive">
         <table class="table table-bordered table-strip table-hover table-xs-responsive">
-            <a class="btn btn-primary" href="<?= base_url('/Transaction/createUser') ?>">Tambah Data</a>
+            <!-- <a class="btn btn-primary" href="<base_url('/Transaction/createUser') ?>">Tambah Data</a> -->
             <thead class="thead-dark">
                 <tr class="text-center">
                     <th scope="col">ID Transaksi</th>
                     <th scope="col">Tanggal Transaksi</th>
                     <th scope="col">ID Customer</th>
-                    <th scope="col">ID Kendaraank</th>
+                    <th scope="col">ID Kendaraan</th>
                     <th scope="col">Harga Jual</th>
                     <th scope="col">Harga Jual Asli</th>
                     <?php
