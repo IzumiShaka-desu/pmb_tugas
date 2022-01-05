@@ -8,15 +8,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title></title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css" rel="stylesheet">
+
+    <!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css" rel="stylesheet"> -->
+    <link href="https://cdn.datatables.net/1.11.3/css/dataTables.bootstrap4.min.css" rel="stylesheet">
 </head>
 
 <body>
     <?php include 'header.php'; ?>
     <!-- <div class="container"> -->
     <h1 id="gudangdata" class="display-3"> Tabel Masukan Data Identitas Motor </h1>
-    <div class="table-responsive">
-        <table class="table table-bordered table-strip table-hover table-xs-responsive">
-            <a class="btn btn-primary" href="<?= base_url('/IdentitasMotor/createUser') ?>">Tambah Data</a>
+
+    <table id="example" class="table table-bordered table-strip table-hover table-xs-responsive">
+        <a class="btn btn-primary" href="<?= base_url('/IdentitasMotor/createUser') ?>">Tambah Data</a>
+        <div class="table-responsive" style="margin-top: 10px;">
+
             <thead class="thead-dark">
                 <tr class="text-center">
                     <th scope="col">ID User</th>
@@ -89,11 +95,19 @@
                     } ?>
 
             </tbody>
-        </table>
+    </table>
     </div>
     <!-- </div> -->
     <?php include 'footer.php'; ?>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.11.3/js/dataTables.bootstrap4.min.js"></script>
 
+    <script>
+        $(document).ready(function() {
+            $('#example').DataTable();
+        });
+    </script>
     <script>
     </script>
 </body>
